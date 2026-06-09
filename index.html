@@ -11,7 +11,7 @@
       --muted: #94a3b8;
       --accent: #38bdf8;
       --card: #020617;
-      --year-col: 140px;
+      --row-header: 140px;
     }
 
     * { box-sizing: border-box; }
@@ -78,17 +78,22 @@
 
     .timeline .item {
       display: grid;
-      grid-template-columns: var(--year-col) 1fr;
+      grid-template-columns: var(--row-header) 1fr;
       gap: 1rem;
       padding-left: 0.5rem;
       border-left: 2px solid rgba(56,189,248,0.3);
     }
 
-    .timeline .year {
-      color: #487178;
+    .timeline .row-header {
       font-weight: bold;
+      width: var(--row-header);
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .timeline .time-label{
+      color: #487178;
       font-size: 0.9rem;
-      width: var(--year-col);
       text-align: right;
       white-space: nowrap;
     }
@@ -109,7 +114,7 @@
         padding-bottom: 0.5rem;
       }
 
-      .timeline .year {
+      .timeline .row-header {
         text-align: left;
         width: auto;
       }
@@ -177,14 +182,14 @@
 
       <div class="timeline">
         <div class="item">
-          <div class="year">2024/06 - Now</div>
+          <div class="row-header time-label">2024/06 - Now</div>
           <div class="content">
             <strong>Software Engineer</strong>
             <a href="https://www.saver.jp/" target="_blank">at Saver Corporation</a>
           </div>
         </div>
         <div class="item">
-          <div class="year">2023/04 - 2023/12</div>
+          <div class="row-header time-label">2023/04 - 2023/12</div>
           <div class="content">
             <strong>Education and Research Support Staff</strong><br/>
             <a href="https://www.hiroshima-u.ac.jp/" target="_blank">Hiroshima University</a><br/>
@@ -200,13 +205,28 @@
 
       <div class="timeline">
         <div class="item">
-            <a href="https://github.com/RQC-HU/dirac_caspt2" target="_blank">dirac_caspt2</a> stand-alone version of IVO/CASCI/CASPT2 and IVO/RASCI/RASPT2 implementation
+            <div class="row-header">
+                <a href="https://github.com/RQC-HU/dirac_caspt2" target="_blank">dirac_caspt2</a>
+            </div>
+            <div class="content">
+                stand-alone version of IVO/CASCI/CASPT2 and IVO/RASCI/RASPT2 implementation
+            </div>
         </div>
         <div class="item">
-            <a href="https://github.com/RQC-HU/dcaspt2_input_generator" target="_blank">dcaspt2_input_<br />generator</a> GUI tool to generate dirac_caspt2 input
+            <div class="row-header">
+                <a href="https://github.com/RQC-HU/dcaspt2_input_generator" target="_blank">dcaspt2_input_<br />generator</a>
+            </div>
+            <div class="content">
+                GUI tool to generate dirac_caspt2 input
+            </div>
         </div>
         <div class="item">
-            <a href="https://github.com/RQC-HU/sum_dirac_dfcoef" target="_blank">sum_dirac_dfcoef</a> CLI tool to summarize DIRAC PRIVEC outputs
+            <div class="row-header">
+                <a href="https://github.com/RQC-HU/sum_dirac_dfcoef" target="_blank">sum_dirac_dfcoef</a>
+            </div>
+            <div class="content">
+                CLI tool to summarize DIRAC PRIVEC outputs
+            </div>
         </div>
       </div>
 
@@ -215,25 +235,25 @@
 
       <div class="timeline">
         <div class="item">
-          <div class="year">2025/08/20</div>
+          <div class="row-header row-header time-label">2025/08/20</div>
           <div class="content">
               <a href="https://gitlab.com/dirac/dirac/-/merge_requests/316" target="_blank">Fix eigenvalue rounding error in DFPCMO file</a>
           </div>
         </div>
         <div class="item">
-          <div class="year">2025/08/08</div>
+          <div class="row-header row-header time-label">2025/08/08</div>
           <div class="content">
               <strong><a href="https://gitlab.com/dirac/dirac/-/merge_requests/312" target="_blank">Add IVO/CASCI/CASPT2 and IVO/RASCI/RASPT2 functionality</a></strong>
           </div>
         </div>
         <div class="item">
-          <div class="year">2024/03/27</div>
+          <div class="row-header row-header time-label">2024/03/27</div>
           <div class="content">
               <a href="https://gitlab.com/dirac/dirac/-/merge_requests/169" target="_blank">Fix default VECPRI range for supersymmetry linear molecule or atom</a>
           </div>
         </div>
         <div class="item">
-          <div class="year">2023/12/06</div>
+          <div class="row-header row-header time-label">2023/12/06</div>
           <div class="content">
               <a href="https://gitlab.com/dirac/dirac/-/merge_requests/136" target="_blank">Reduce file copy cost after calculation</a>
           </div>
