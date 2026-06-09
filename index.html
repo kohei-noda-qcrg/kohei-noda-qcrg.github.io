@@ -102,6 +102,27 @@
       text-decoration: underline;
     }
 
+    @media (max-width: 640px) {
+      .timeline .item {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .timeline .year {
+        text-align: left;
+        width: auto;
+      }
+
+      .card {
+        padding: 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+
     .links {
       margin-top: 2rem;
       display: grid;
