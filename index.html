@@ -1,275 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Kohei Noda</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg: #0f172a;
-      --fg: #e5e7eb;
-      --muted: #94a3b8;
-      --accent: #38bdf8;
-      --card: #020617;
-      --row-header: 140px;
-    }
+    <meta charset="UTF-8" />
+    <title>Kohei Noda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        :root {
+            --bg: #0f172a;
+            --fg: #e5e7eb;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --card: #020617;
+            --row-header: 140px;
+        }
 
-    * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont,
-                   "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #020617, #0f172a);
-      color: var(--fg);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #020617, #0f172a);
+            color: var(--fg);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    main {
-      width: 100%;
-      max-width: 820px;
-      padding: 2rem;
-    }
+        main {
+            width: 100%;
+            max-width: 820px;
+            padding: 2rem;
+        }
 
-    .card {
-      background: rgba(2, 6, 23, 0.95);
-      border-radius: 16px;
-      padding: 2rem 2.5rem;
-      box-shadow: 0 20px 40px rgba(0,0,0,.4);
-      border: 1px solid rgba(255,255,255,.05);
-    }
+        .card {
+            background: rgba(2, 6, 23, 0.95);
+            border-radius: 16px;
+            padding: 2rem 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+            border: 1px solid rgba(255, 255, 255, .05);
+        }
 
-    h1 {
-      font-size: 2.3rem;
-      margin: 0 0 0.3rem;
-    }
+        h1 {
+            font-size: 2.3rem;
+            margin: 0 0 0.3rem;
+        }
 
-    .subtitle {
-      color: var(--muted);
-      margin-bottom: 1.2rem;
-    }
+        .subtitle {
+            color: var(--muted);
+            margin-bottom: 1.2rem;
+        }
 
-    p {
-      line-height: 1.7;
-      color: #cbd5f5;
-    }
+        p {
+            line-height: 1.7;
+            color: #cbd5f5;
+        }
 
-    h2.section {
-      margin-top: 2rem;
-      font-size: 1.3rem;
-      border-left: 4px solid var(--accent);
-      padding-left: 0.6rem;
-    }
+        h2.section {
+            margin-top: 2rem;
+            font-size: 1.3rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 0.6rem;
+        }
 
-    h3.section {
-      font-size: 1rem;
-      padding-left: 0.6rem;
-    }
+        h3.section {
+            font-size: 1rem;
+            padding-left: 0.6rem;
+        }
 
-    .timeline {
-      margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+        .timeline {
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
 
-    .timeline .item {
-      display: grid;
-      grid-template-columns: var(--row-header) 1fr;
-      gap: 1rem;
-      padding-left: 0.5rem;
-      border-left: 2px solid rgba(56,189,248,0.3);
-    }
+        .timeline .item {
+            display: grid;
+            grid-template-columns: var(--row-header) 1fr;
+            gap: 1rem;
+            padding-left: 0.5rem;
+            border-left: 2px solid rgba(56, 189, 248, 0.3);
+        }
 
-    .timeline .row-header {
-      font-weight: bold;
-      width: var(--row-header);
-      text-align: right;
-      white-space: normal;
-      overflow-wrap: anywhere;
-    }
+        .timeline .row-header {
+            font-weight: bold;
+            width: var(--row-header);
+            text-align: right;
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
 
-    .timeline .time-label{
-      color: #487178;
-      font-size: 0.9rem;
-      text-align: right;
-      white-space: normal;
-      overflow-wrap: anywhere;
-    }
+        .timeline .time-label {
+            color: #487178;
+            font-size: 0.9rem;
+            text-align: right;
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
 
-    .timeline .content a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+        .timeline .content a {
+            color: var(--accent);
+            text-decoration: none;
+        }
 
-    .timeline .content a:hover {
-      text-decoration: underline;
-    }
+        .timeline .content a:hover {
+            text-decoration: underline;
+        }
 
-    @media (max-width: 640px) {
-      .timeline .item {
-        grid-template-columns: 1fr;
-        gap: 0.2rem;
-        padding-bottom: 0.5rem;
-      }
+        @media (max-width: 640px) {
+            .timeline .item {
+                grid-template-columns: 1fr;
+                gap: 0.2rem;
+                padding-bottom: 0.5rem;
+            }
 
-      .timeline .row-header {
-        text-align: left;
-        width: auto;
-      }
+            .timeline .row-header {
+                text-align: left;
+                width: auto;
+            }
 
-      .card {
-        padding: 1.5rem;
-      }
+            .card {
+                padding: 1.5rem;
+            }
 
-      h1 {
-        font-size: 1.8rem;
-      }
-    }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
 
-    .links {
-      margin-top: 2rem;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 0.8rem;
-    }
+        .links {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.8rem;
+        }
 
-    .links a {
-      display: block;
-      padding: 0.7rem 1rem;
-      text-align: center;
-      text-decoration: none;
-      color: var(--fg);
-      background: #020617;
-      border-radius: 10px;
-      border: 1px solid rgba(56,189,248);
-      transition: all .2s ease;
-    }
+        .links a {
+            display: block;
+            padding: 0.7rem 1rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--fg);
+            background: #020617;
+            border-radius: 10px;
+            border: 1px solid rgba(56, 189, 248);
+            transition: all .2s ease;
+        }
 
-    .links a:hover {
-      background: var(--accent);
-      color: #020617;
-      transform: translateY(-2px);
-    }
+        .links a:hover {
+            background: var(--accent);
+            color: #020617;
+            transform: translateY(-2px);
+        }
 
-    footer {
-      margin-top: 2rem;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.8rem;
-    }
-  </style>
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.8rem;
+        }
+    </style>
 </head>
+
 <body>
-  <main>
-    <div class="card">
-      <h1>Kohei Noda</h1>
-      <div class="subtitle">Software Engineer</div>
+    <main>
+        <div class="card">
+            <h1>Kohei Noda</h1>
+            <div class="subtitle">Software Engineer</div>
 
-      <p>
-        I am a Software engineer with a background in academic research support. <br />
-        Experienced in systems, embedded, and infrastructure-oriented development.
-      </p>
-      <div class="links">
-        <a href="https://github.com/kohei-noda-qcrg" target="_blank">GitHub</a>
-        <a href="https://gitlab.com/kohei-noda" target="_blank">GitLab</a>
-        <a href="https://www.linkedin.com/in/kohei-noda-qcrg" target="_blank">LinkedIn</a>
-        <a href="mailto:ponserviceregist@gmail.com">Email</a>
-      </div>
-
-      <h2 class="section">Career</h2>
-
-      <div class="timeline">
-        <div class="item">
-          <div class="row-header time-label">2024/06 - Now</div>
-          <div class="content">
-            <strong>Software Engineer</strong>
-            <a href="https://www.saver.jp/" target="_blank">at Saver Corporation</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="row-header time-label">2023/04 - 2023/12</div>
-          <div class="content">
-            <strong>Education and Research Support Staff</strong><br/>
-            <a href="https://www.hiroshima-u.ac.jp/" target="_blank">Hiroshima University</a><br/>
-            <a href="https://www.hiroshima-u.ac.jp/adse" target="_blank">
-              Graduate School of Advanced Science and Engineering
-            </a><br/>
-              Quantum Chemistry Laboratory
-          </div>
-        </div>
-      </div>
-
-      <h2 class="section">Publicly available work deliverables</h2>
-
-      <div class="timeline">
-        <div class="item">
-            <div class="row-header">
-                <a href="https://github.com/RQC-HU/dirac_caspt2" target="_blank">dirac_caspt2</a>
+            <p>
+                I am a Software engineer with a background in academic research support. <br />
+                Experienced in systems, embedded, and infrastructure-oriented development.
+            </p>
+            <div class="links">
+                <a href="https://github.com/kohei-noda-qcrg" target="_blank">GitHub</a>
+                <a href="https://gitlab.com/kohei-noda" target="_blank">GitLab</a>
+                <a href="https://www.linkedin.com/in/kohei-noda-qcrg" target="_blank">LinkedIn</a>
+                <a href="mailto:ponserviceregist@gmail.com">Email</a>
             </div>
-            <div class="content">
-                stand-alone version of IVO/CASCI/CASPT2 and IVO/RASCI/RASPT2 implementation
-            </div>
-        </div>
-        <div class="item">
-            <div class="row-header">
-                <a href="https://github.com/RQC-HU/dcaspt2_input_generator" target="_blank">dcaspt2_input_generator</a>
-            </div>
-            <div class="content">
-                GUI tool to generate dirac_caspt2 input
-            </div>
-        </div>
-        <div class="item">
-            <div class="row-header">
-                <a href="https://github.com/RQC-HU/sum_dirac_dfcoef" target="_blank">sum_dirac_dfcoef</a>
-            </div>
-            <div class="content">
-                CLI tool to summarize DIRAC PRIVEC outputs
-            </div>
-        </div>
-      </div>
 
-      <h2 class="section">OSS contributions</h2>
-      <h3 class="section"><a href="https://diracprogram.org" target="_blank">DIRAC</a> (<a href="https://gitlab.com/dirac/dirac" target="_blank">GitLab</a>): Program for Atomic and Molecular Direct Iterative Relativistic All-electron Calculations</h3>
+            <h2 class="section">Career</h2>
 
-      <div class="timeline">
-        <div class="item">
-          <div class="row-header row-header time-label">2025/08/20</div>
-          <div class="content">
-              <a href="https://gitlab.com/dirac/dirac/-/merge_requests/316" target="_blank">Fix eigenvalue rounding error in DFPCMO file</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="row-header row-header time-label">2025/08/08</div>
-          <div class="content">
-              <strong><a href="https://gitlab.com/dirac/dirac/-/merge_requests/312" target="_blank">Add IVO/CASCI/CASPT2 and IVO/RASCI/RASPT2 functionality</a></strong>
-          </div>
-        </div>
-        <div class="item">
-          <div class="row-header row-header time-label">2024/03/27</div>
-          <div class="content">
-              <a href="https://gitlab.com/dirac/dirac/-/merge_requests/169" target="_blank">Fix default VECPRI range for supersymmetry linear molecule or atom</a>
-          </div>
-        </div>
-        <div class="item">
-          <div class="row-header row-header time-label">2023/12/06</div>
-          <div class="content">
-              <a href="https://gitlab.com/dirac/dirac/-/merge_requests/136" target="_blank">Reduce file copy cost after calculation</a>
-          </div>
-        </div>
-      </div>
-    </div>
+            <div class="timeline">
+                <div class="item">
+                    <div class="row-header time-label">2024/06 - Now</div>
+                    <div class="content">
+                        <strong>Software Engineer</strong>
+                        <a href="https://www.saver.jp/" target="_blank">at Saver Corporation</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="row-header time-label">2023/04 - 2023/12</div>
+                    <div class="content">
+                        <strong>Education and Research Support Staff</strong><br />
+                        <a href="https://www.hiroshima-u.ac.jp/" target="_blank">Hiroshima University</a><br />
+                        <a href="https://www.hiroshima-u.ac.jp/adse" target="_blank">
+                            Graduate School of Advanced Science and Engineering
+                        </a><br />
+                        Quantum Chemistry Laboratory
+                    </div>
+                </div>
+            </div>
 
-    <footer>
-      © <span id="y"></span> Kohei Noda
-    </footer>
-  </main>
+            <h2 class="section">Publicly available work deliverables</h2>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+            <div class="timeline">
+                <div class="item">
+                    <div class="row-header">
+                        <a href="https://himekuri-board.com" target="_blank">himekuri-board</a>
+                    </div>
+                    <div class="content">
+                        A web app designed primarily for care recipients to help them focus on and manage only their
+                        today's schedule. it's available only in Japan.
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="row-header">
+                        <a href="https://github.com/RQC-HU/dirac_caspt2" target="_blank">dirac_caspt2</a>
+                    </div>
+                    <div class="content">
+                        stand-alone version of IVO/CASCI/CASPT2 and IVO/RASCI/RASPT2 implementation
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="row-header">
+                        <a href="https://github.com/RQC-HU/dcaspt2_input_generator"
+                            target="_blank">dcaspt2_input_generator</a>
+                    </div>
+                    <div class="content">
+                        GUI tool to generate dirac_caspt2 input
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="row-header">
+                        <a href="https://github.com/RQC-HU/sum_dirac_dfcoef" target="_blank">sum_dirac_dfcoef</a>
+                    </div>
+                    <div class="content">
+                        CLI tool to summarize DIRAC PRIVEC outputs
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section">OSS contributions</h2>
+            <h3 class="section"><a href="https://diracprogram.org" target="_blank">DIRAC</a> (<a
+                    href="https://gitlab.com/dirac/dirac" target="_blank">GitLab</a>): Program for Atomic and Molecular
+                Direct Iterative Relativistic All-electron Calculations</h3>
+
+            <div class="timeline">
+                <div class="item">
+                    <div class="row-header row-header time-label">2025/08/20</div>
+                    <div class="content">
+                        <a href="https://gitlab.com/dirac/dirac/-/merge_requests/316" target="_blank">Fix eigenvalue
+                            rounding error in DFPCMO file</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="row-header row-header time-label">2025/08/08</div>
+                    <div class="content">
+                        <strong><a href="https://gitlab.com/dirac/dirac/-/merge_requests/312" target="_blank">Add
+                                IVO/CASCI/CASPT2 and IVO/RASCI/RASPT2 functionality</a></strong>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="row-header row-header time-label">2024/03/27</div>
+                    <div class="content">
+                        <a href="https://gitlab.com/dirac/dirac/-/merge_requests/169" target="_blank">Fix default VECPRI
+                            range for supersymmetry linear molecule or atom</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="row-header row-header time-label">2023/12/06</div>
+                    <div class="content">
+                        <a href="https://gitlab.com/dirac/dirac/-/merge_requests/136" target="_blank">Reduce file copy
+                            cost after calculation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            © <span id="y"></span> Kohei Noda
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>
